@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول | أكاديمية صُنّاع الوعي</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <style>
+    :root {
+      --primary: #1a1a2e;
+      --secondary: #16213e;
+      --accent: #e94560;
+      --white: #fff;
+      --light-bg: #f0f2f8;
+      --text-dark: #1a1a2e;
+      --border: #e5e7eb;
+      --gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
+    body { background: var(--light-bg); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+    .login-container { background: var(--white); width: 100%; max-width: 450px; padding: 40px; border-radius: 16px; box-shadow: 0 8px 32px rgba(26,26,46,0.08); border: 1px solid var(--border); text-align: center; }
+    .logo-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #e94560 0%, #c62a47 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #fff; margin: 0 auto 20px; box-shadow: 0 4px 14px rgba(233,69,96,0.35); }
+    h2 { color: var(--text-dark); margin-bottom: 8px; font-weight: 800; }
+    p { color: #6b7280; font-size: 14px; margin-bottom: 30px; }
+    .input-group { position: relative; margin-bottom: 20px; text-align: right; }
+    .input-group label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: var(--text-dark); }
+    .input-group i { position: absolute; right: 16px; bottom: 14px; color: #9ca3af; }
+    .input-group input { width: 100%; padding: 12px 44px 12px 16px; border: 1px solid var(--border); border-radius: 10px; background: #f9fafb; font-size: 14px; transition: all 0.3s; outline: none; }
+    .input-group input:focus { border-color: var(--accent); background: #fff; box-shadow: 0 0 0 4px rgba(233,69,96,0.1); }
+    .btn-login { width: 100%; padding: 14px; background: linear-gradient(135deg, #e94560 0%, #c62a47 100%); color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 14px rgba(233,69,96,0.2); }
+    .btn-login:hover { transform: translateY(-1px); opacity: 0.95; }
+    .footer-text { margin-top: 24px; font-size: 13px; color: #6b7280; }
+    .footer-text a { color: var(--accent); text-decoration: none; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+    <h2>أكاديمية صُنّاع الوعي</h2>
+    <p>مرحباً بك! يرجى تسجيل الدخول للوصول لحسابك</p>
+    <form action="index.html">
+      <div class="input-group">
+        <label>البريد الإلكتروني</label>
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" placeholder="name@example.com" required>
+      </div>
+      <div class="input-group">
+        <label>كلمة المرور</label>
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn-login">تسجيل الدخول</button>
+    </form>
+    <div class="footer-text">ليس لديك حساب؟ <a href="#">أنشئ حساباً جديداً</a></div>
+  </div>
+</body>
+</html>
