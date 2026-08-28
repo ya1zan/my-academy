@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://googleapis.com" />
   <link href="https://googleapis.comcss2?family=Tajawal:wght@300;400;500;700;800;900&amp;family=Cairo:wght@300;400;600;700;900&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cloudflare.com" />
-  <script src="https://jsdelivr.net"></script>
   <style>
     :root {
       --primary: #1a1a2e;
@@ -48,7 +47,6 @@
       z-index: 100;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease;
     }
 
     .sidebar-logo {
@@ -298,6 +296,16 @@
       padding: 22px;
     }
 
+    .visual-chart {
+      background: #f8fafc;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      color: var(--text-gray);
+      font-size: 14px;
+    }
+
     @media (max-width: 1024px) {
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .content-grid { grid-template-columns: 1fr; }
@@ -323,14 +331,14 @@
     <div class="sidebar-nav">
       <div class="sidebar-nav-group">
         <div class="nav-group-label">الرئيسية</div>
-        <div class="sidebar-nav-item active"><i class="fa-solid fa-chart-pie"></i> الإحصائيات العامة</div>
-        <div class="sidebar-nav-item"><i class="fa-solid fa-book-open"></i> الكورسات والدورات</div>
-        <div class="sidebar-nav-item"><i class="fa-solid fa-users"></i> الطلاب المشتركين</div>
+        <a href="index.html" style="text-decoration:none;"><div class="sidebar-nav-item active"><i class="fa-solid fa-chart-pie"></i> الإحصائيات العامة</div></a>
+        <a href="courses.html" style="text-decoration:none;"><div class="sidebar-nav-item"><i class="fa-solid fa-book-open"></i> الكورسات والدورات</div></a>
+        <a href="students.html" style="text-decoration:none;"><div class="sidebar-nav-item"><i class="fa-solid fa-users"></i> الطلاب المشتركين</div></a>
       </div>
     </div>
 
     <div class="sidebar-footer">
-      <a href="#"><i class="fa-solid fa-right-from-bracket"></i> تسجيل الخروج</a>
+      <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> تسجيل الخروج</a>
     </div>
   </div>
 
@@ -358,8 +366,4 @@
           <div class="stat-label">الدورات الحالية</div>
         </div>
         <div class="stat-card teal">
-          <div class="stat-icon"><i class="fa-solid fa-wallet"></i></div>
-          <div class="stat-value">$3,400</div>
-          <div class="stat-label">الأرباح الكلية</div>
-        </div>
-        <div class="stat-card blue">
+س
