@@ -3,65 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تسجيل الدخول | أكاديمية صُنّاع الوعي</title>
+  <title>لوحة التحكم - تسجيل الدخول | أكاديمية صُنّاع الوعي</title>
   <link href="https://googleapis.com" rel="stylesheet">
   <link rel="stylesheet" href="https://cloudflare.com">
   <style>
     :root {
-      --primary: #1a1a2e;
-      --secondary: #16213e;
+      --bg-dark: #1e2538;
+      --card-bg: #262f45;
       --accent: #e94560;
-      --white: #fff;
-      --light-bg: #f0f2f8;
-      --text-dark: #1a1a2e;
-      --border: #e5e7eb;
+      --text-white: #ffffff;
+      --text-muted: #8b9bb4;
+      --border-color: #384563;
     }
+    
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
-    body { background: var(--light-bg); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-    .login-container { background: var(--white); width: 100%; max-width: 450px; padding: 40px; border-radius: 16px; box-shadow: 0 8px 32px rgba(26,26,46,0.08); border: 1px solid var(--border); text-align: center; }
-    .logo-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #e94560 0%, #c62a47 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #fff; margin: 0 auto 20px; box-shadow: 0 4px 14px rgba(233,69,96,0.35); }
-    h2 { color: var(--text-dark); margin-bottom: 8px; font-weight: 800; }
-    p { color: #6b7280; font-size: 14px; margin-bottom: 30px; }
-    .input-group { position: relative; margin-bottom: 20px; text-align: right; }
-    .input-group label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: var(--text-dark); }
-    .input-group i { position: absolute; right: 16px; bottom: 14px; color: #9ca3af; }
-    .input-group input { width: 100%; padding: 12px 44px 12px 16px; border: 1px solid var(--border); border-radius: 10px; background: #f9fafb; font-size: 14px; transition: all 0.3s; outline: none; }
-    .input-group input:focus { border-color: var(--accent); background: #fff; box-shadow: 0 0 0 4px rgba(233,69,96,0.1); }
-    .btn-login { width: 100%; padding: 14px; background: linear-gradient(135deg, #e94560 0%, #c62a47 100%); color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 14px rgba(233,69,96,0.2); }
-    .btn-login:hover { transform: translateY(-1px); opacity: 0.95; }
-    .error-msg { color: #ef4444; font-size: 13px; margin-top: 10px; display: none; text-align: right; font-weight: bold; }
+    
+    body { 
+      background-color: var(--bg-dark); 
+      /* خلفية شبكية مطابقة للتصميم الأصلي */
+      background-image: linear-gradient(rgba(56, 69, 99, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 69, 99, 0.15) 1px, transparent 1px);
+      background-size: 20px 20px;
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      padding: 20px; 
+    }
+    
+    .login-box { 
+      background: var(--card-bg); 
+      width: 100%; 
+      max-width: 420px; 
+      padding: 40px 30px; 
+      border-radius: 16px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25); 
+      text-align: center;
+      border: 1px solid var(--border-color);
+    }
+    
+    .logo-area {
+      width: 65px; height: 65px;
+      background: linear-gradient(135deg, #e94560 0%, #c62a47 100%);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; color: #fff;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 15px rgba(233,69,96,0.4);
+    }
+    
+    h2 { color: var(--text-white); font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+    .subtitle { color: var(--text-muted); font-size: 13px; margin-bottom: 30px; }
+    
+    .form-group { text-align: right; margin-bottom: 22px; position: relative; }
+    .form-group label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: var(--text-white); }
+    
+    .input-wrapper { position: relative; display: flex; align-items: center; }
+    .input-wrapper i { position: absolute; right: 16px; color: var(--text-muted); font-size: 16px; }
+    
+    .form-group input { 
+      width: 100%; 
+      padding: 14px 44px 14px 16px; 
+      border: 1px solid var(--border-color); 
+      border-radius: 10px; 
+      background: #1d2436; 
+      color: var(--text-white);
+      font-size: 14px; 
+      transition: all 0.3s; 
+      outline: none; 
+    }
+    
+    .form-group input:focus { border-color: var(--accent); background: #222a3f; box-shadow: 0 0 8px rgba(233,69,96,0.2); }
+    ::placeholder { color: #53647e; }
+    
+    .btn-submit { 
+      width: 100%; 
+      padding: 14px; 
+      background: linear-gradient(135deg, #e94560 0%, #c62a47 100%); 
+      color: #fff; 
+      border: none; 
+      border-radius: 10px; 
+      font-size: 15px; 
+      font-weight: 700; 
+      cursor: pointer; 
+      transition: all 0.3s; 
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 4px 14px rgba(233,69,96,0.3);
+      margin-top: 10px;
+    }
+    
+    .btn-submit:hover { transform: translateY(-1px); opacity: 0.95; box-shadow: 0 6px 20px rgba(233,69,96,0.4); }
+    
+    .back-link { display: inline-block; margin-top: 25px; color: var(--text-muted); text-decoration: none; font-size: 13px; transition: 0.3s; }
+    .back-link:hover { color: var(--accent); }
+    
+    .error-msg { color: #ff5252; font-size: 13px; margin-top: 10px; display: none; text-align: right; font-weight: bold; }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+
+  <div class="login-box">
+    <!-- الشعار العلوي المطابق -->
+    <div class="logo-area"><i class="fa-solid fa-brain"></i></div>
     <h2>أكاديمية صُنّاع الوعي</h2>
-    <p>مرحباً بك! يرجى تسجيل الدخول للوصول لحسابك</p>
+    <div class="subtitle">لوحة التحكم – تسجيل الدخول</div>
     
     <form id="loginForm">
-      <div class="input-group">
+      <div class="form-group">
         <label>البريد الإلكتروني</label>
-        <i class="fa-solid fa-envelope"></i>
-        <input type="email" id="email" placeholder="name@example.com" required>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" id="email" placeholder="أدخل البريد الإلكتروني" required>
+        </div>
       </div>
-      <div class="input-group">
+      
+      <div class="form-group">
         <label>كلمة المرور</label>
-        <i class="fa-solid fa-lock"></i>
-        <input type="password" id="password" placeholder="••••••••" required>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="password" placeholder="أدخل كلمة المرور" required>
+        </div>
       </div>
+      
       <div id="errorLocation" class="error-msg"></div>
-      <button type="submit" class="btn-login">تسجيل الدخول</button>
+      
+      <button type="submit" class="btn-submit">
+        <i class="fa-solid fa-right-to-bracket"></i> دخول للوحة التحكم
+      </button>
     </form>
+    
+    <a href="#" class="back-link">← العودة للموقع الرئيسي</a>
   </div>
 
   <script type="module">
     import { initializeApp } from "https://gstatic.com";
     import { getAuth, signInWithEmailAndPassword } from "https://gstatic.com";
 
-    // كود الربط الكامل والحقيقي التابع لأكاديميتك
+    // كود إعدادات Firebase الكامل والخاص بمشروعك
     const firebaseConfig = {
       apiKey: "AIzaSyBcDDH3eK31d_YRcw9T7EKvQsVu1AxVQ4U",
-      authDomain: "my-academy-deb07.firebaseapp.com",
+      authDomain: "://firebaseapp.com",
       projectId: "my-academy-deb07",
       storageBucket: "my-academy-deb07.firebasestorage.app",
       messagingSenderId: "353925836983",
@@ -82,7 +162,7 @@
 
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // دخول ناجح للوحة الإدارة والطلاب
+          // التوجيه للوحة التحكم عند نجاح كلمة السر
           window.location.href = "index.html";
         })
         .catch((error) => {
