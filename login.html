@@ -30,22 +30,21 @@
     
     /* الدائرة النيلية الفخمة المحاطة بالذهبي الملكي */
     .logo-container {
-      width: 75px; height: 75px;
+      width: 90px; height: 90px;
       background: #0f2b46;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 20px;
       box-shadow: 0 4px 12px rgba(15, 43, 70, 0.3);
       border: 2px solid #d4af37;
-      overflow: hidden;
+      overflow: hidden; /* يمنع خروج الصورة عن حواف الدائرة */
     }
     
-    /* ضبط حجم الشعار الحقيقي ليتوسط الدائرة تماماً */
+    /* ضبط حجم الصورة لتملأ الدائرة بشكل نظيف ودائري */
     .logo-container img { 
       width: 100%; 
       height: 100%; 
-      object-fit: contain;
-      padding: 6px;
+      object-fit: cover; 
     }
     
     h2 { color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 4px; }
@@ -90,9 +89,9 @@
 <body>
 
   <div class="login-card">
-    <!-- الصورة تسحب شعار موقعك الملون أونلاين تلقائياً وتضعه داخل الدائرة النيلية والذهبية -->
+    <!-- كود الدائرة بعد مسح النص العادي وزرع وسم استدعاء صورة اللوجو الحقيقية مية بالمية -->
     <div class="logo-container">
-      <img src="https://netlify.app" alt="لوجو صناع الوعي" onerror="this.src='https://netlify.app'">
+      <img src="logo.png">
     </div>
     <h2>أكاديمية صُنّاع الوعي</h2>
     <div class="sub">لوحة التحكم – تسجيل الدخول</div>
