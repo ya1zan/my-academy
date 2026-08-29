@@ -87,7 +87,7 @@
       </div>
 
       <div class="form-group">
-        <label>كلمة运行</label>
+        <label>كلمة المرور</label>
         <input type="password" id="password" placeholder="أدخل كلمة المرور" required>
       </div>
 
@@ -99,44 +99,30 @@
     <a href="#" class="footer-link">نسيت كلمة المرور؟</a>
   </div>
 
-  <script type="module">
-    import { initializeApp } from "https://gstatic.com";
-    import { getAuth, signInWithEmailAndPassword } from "https://gstatic.com";
-
-    // إعدادات الفايربيس الصحيحة والكاملة بعد تصحيح رابط الـ authDomain
-    const firebaseConfig = {
-      apiKey: "AIzaSyBcDDH3eK31d_YRcw9T7EKvQsVu1AxVQ4U",
-      authDomain: "://firebaseapp.com", // تم إصلاح الرابط هنا ليعمل الاتصال بنجاح
-      projectId: "my-academy-deb07",
-      storageBucket: "my-academy-deb07.firebasestorage.app",
-      messagingSenderId: "353925836983",
-      appId: "1:353925836983:web:48e4b2ad4544a76e065d32",
-      measurementId: "G-DCGMMNBK0G"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
+  <script>
     document.getElementById('loginForm').addEventListener('submit', (e) => {
-      e.preventDefault();
+      e.preventDefault(); // منع إعادة تحميل الصفحة الافتراضي
+      
+      // جلب القيم التي كتبها المستخدم
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
       const errorDiv = document.getElementById('errorLocation');
 
+      // إخفاء رسالة الخطأ القديمة
       errorDiv.style.display = "none";
 
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          console.log("تم تسجيل الدخول بنجاح! جاري التوجيه...");
-          window.location.href = "index.html"; // التوجيه للوحة التحكم
-        })
-        .catch((error) => {
-          console.error("حدث خطأ أثناء تسجيل الدخول:", error.code, error.message);
-          
-          // رسالة خطأ واضحة للمستخدم
-          errorDiv.innerText = "عذراً، البريد الإلكتروني أو كلمة المرور غير صحيحة!";
-          errorDiv.style.display = "block";
-        });
+      // البيانات المطلوبة والتحقق منها محلياً داخل المتصفح
+      const correctEmail = "yzn83473@gmail.com";
+      const correctPassword = "yazan 2012";
+
+      if (email === correctEmail && password === correctPassword) {
+        console.log("تمت مطابقة البيانات بنجاح! جاري التوجيه...");
+        window.location.href = "index.html"; // الانتقال إلى الصفحة الرئيسية
+      } else {
+        // إظهار رسالة الخطأ إذا كانت البيانات غير متطابقة
+        errorDiv.innerText = "عذراً، البريد الإلكتروني أو كلمة المرور غير صحيحة!";
+        errorDiv.style.display = "block";
+      }
     });
   </script>
 </body>
