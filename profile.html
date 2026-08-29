@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الملف الشخصي | لوحة التحكم</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <style>
+    :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #e94560; --white: #fff; --light-bg: #f0f2f8; --text-dark: #1a1a2e; --border: #e5e7eb; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
+    body { background: var(--light-bg); padding: 40px 20px; display: flex; justify-content: center; }
+    .profile-card { background: var(--white); width: 100%; max-width: 500px; padding: 30px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.03); text-align: right; }
+    h2 { margin-bottom: 20px; font-weight: 800; color: var(--text-dark); border-bottom: 2px solid var(--light-bg); padding-bottom: 10px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: var(--text-dark); }
+    .form-group input { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 10px; background: #f9fafb; font-size: 14px; outline: none; }
+    .form-group input:focus { border-color: var(--accent); background: #fff; }
+    .btn-save { width: 100%; padding: 14px; background: var(--primary); color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: 0.3s; margin-bottom: 10px; }
+    .btn-save:hover { background: var(--accent); }
+    .btn-back { display: block; text-align: center; text-decoration: none; color: #6b7280; font-size: 14px; font-weight: 500; }
+    .btn-back:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <h2><i class="fa-solid fa-user-gear"></i> إعدادات ملفي الشخصي</h2>
+    <div class="form-group">
+      <label>اسم المستخدم</label>
+      <input type="text" value="أحمد علي" placeholder="أدخل اسمك">
+    </div>
+    <div class="form-group">
+      <label>البريد الإلكتروني</label>
+      <input type="email" value="test@academy.com" disabled style="cursor: not-allowed; opacity: 0.7;">
+    </div>
+    <div class="form-group">
+      <label>كلمة المرور الجديدة</label>
+      <input type="password" placeholder="••••••••">
+    </div>
+    <button class="btn-save">حفظ التعديلات</button>
+    <a href="index.html" class="btn-back">← العودة للوحة التحكم</a>
+  </div>
+</body>
+</html>
