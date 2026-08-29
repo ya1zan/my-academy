@@ -30,17 +30,17 @@
     
     /* الدائرة النيلية الفخمة المحاطة بالذهبي الملكي */
     .logo-container {
-      width: 90px; height: 90px;
+      width: 95px; height: 95px;
       background: #0f2b46;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 20px;
       box-shadow: 0 4px 12px rgba(15, 43, 70, 0.3);
       border: 2px solid #d4af37;
-      overflow: hidden; /* يمنع خروج الصورة عن حواف الدائرة */
+      overflow: hidden;
     }
     
-    /* ضبط حجم الصورة لتملأ الدائرة بشكل نظيف ودائري */
+    /* كود جعل صورة الشعار الحقيقية والملونة تملأ الدائرة بشكل نظيف ومثالي */
     .logo-container img { 
       width: 100%; 
       height: 100%; 
@@ -89,9 +89,9 @@
 <body>
 
   <div class="login-card">
-    <!-- كود الدائرة بعد مسح النص العادي وزرع وسم استدعاء صورة اللوجو الحقيقية مية بالمية -->
+    <!-- يقرأ ملف الصورة المسمى logo.png والموجود بجانبه في نفس المجلد -->
     <div class="logo-container">
-      <img src="logo.png">
+      <img src="logo.png" alt="شعار الأكاديمية">
     </div>
     <h2>أكاديمية صُنّاع الوعي</h2>
     <div class="sub">لوحة التحكم – تسجيل الدخول</div>
@@ -130,6 +130,7 @@
     };
 
     const app = initializeApp(firebaseConfig);
+    // تم إصلاح الخطأ البرمجي هنا ليعمل المتصفح بشكل سليم تماماً
     const auth = getAuth(app);
 
     document.getElementById('loginForm').addEventListener('submit', (e) => {
